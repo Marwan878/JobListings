@@ -1,0 +1,250 @@
+:root {
+    --desaturated-dark-cyan: hsl(180, 29%, 50%);
+    --light-grayish-cyan-1: hsl(180, 52%, 96%); /* (Background) */
+    --light-grayish-cyan-2: hsl(180, 31%, 95%); /* (Filter Tablets) */
+    --dark-grayish-cyan: hsl(180, 8%, 52%);
+    --very-dark-grayish-cyan: hsl(180, 14%, 20%);
+    --main-transition: 0.3s;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 15px;
+}
+hr {
+    border: none;
+    height: 1px;
+    background-color: #aaa;
+    margin-block: 20px;
+}
+body {
+    background-color: var(--light-grayish-cyan-1);
+    font-family: sans-serif;
+}
+header {
+    background-image: url("./images/bg-header-mobile.svg");
+    background-size: cover;
+    height: 150px;
+    background-color: var(--desaturated-dark-cyan);
+    position: relative;
+}
+header .shuffle {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    column-gap: 15px;
+    width: calc(100% - 30px);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border-radius: 5px;
+    -webkit-transform: translate(-50%, 50%);
+    -moz-transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
+    -o-transform: translate(-50%, 50%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+header .shuffle .selectors {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-grow: 1;
+    column-gap: 40px;
+    row-gap: 20px;
+}
+header .shuffle .selectors .selector {
+    display: flex;
+    height: 28px;
+    position: relative;
+    width: fit-content;
+}
+header .shuffle .selectors .selector .left,
+.card .body > .attribute {
+    background-color: var(--light-grayish-cyan-2);
+    color: var(--desaturated-dark-cyan);
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+header .shuffle .selectors .selector .delete {
+    position: absolute;
+    color: white;
+    font-size: 1rem;
+    height: 100%;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 5px 12px 7px 10px;
+    background-color: var(--desaturated-dark-cyan);
+    right: -30px;
+    top: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: var(--main-transition) background-color ease;
+    -webkit-transition: var(--main-transition) background-color ease;
+    -moz-transition: var(--main-transition) background-color ease;
+    -ms-transition: var(--main-transition) background-color ease;
+    -o-transition: var(--main-transition) background-color ease;
+}
+header .shuffle .selectors .selector .delete:hover {
+    background-color: var(--very-dark-grayish-cyan);
+}
+header .shuffle .clear {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    color: var(--very-dark-grayish-cyan);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--main-transition) all ease;
+    -webkit-transition: var(--main-transition) all ease;
+    -moz-transition: var(--main-transition) all ease;
+    -ms-transition: var(--main-transition) all ease;
+    -o-transition: var(--main-transition) all ease;
+}
+header .shuffle .clear:hover {
+    border-bottom: var(--desaturated-dark-cyan) 1px solid;
+    color: var(--desaturated-dark-cyan);
+}
+.cards {
+    padding: 15px;
+}
+.card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-block: 60px;
+    padding: 60px 15px 15px 15px;
+    position: relative;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.card.featured {
+    border-left: 7px solid var(--desaturated-dark-cyan);
+}
+.card .company-logo {
+    position: absolute;
+    width: 60px;
+    left: 10px;
+    top: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.card .head .top {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    font-weight: bold;
+}
+.card .head .top .company {
+    color: var(--desaturated-dark-cyan);
+}
+.card .head .top .tags {
+    display: flex;
+    column-gap: 10px;
+}
+.card .head .top .tags .tag {
+    height: 28px;
+    width: fit-content;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+}
+.card .head .top .tags .tag.new {
+    background-color: var(--desaturated-dark-cyan);
+}
+.card .head .top .tags .tag.featured {
+    background-color: var(--very-dark-grayish-cyan);
+}
+.card .head .job-title {
+    font-weight: bold;
+    color: var(--very-dark-grayish-cyan);
+    margin-block: 15px;
+    font-size: 1.1rem;
+}
+.card .head .details {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: var(--dark-grayish-cyan);
+}
+.card .body {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+.card .body > .attribute {
+    cursor: pointer;
+    transition: var(--main-transition) ease all;
+    -webkit-transition: var(--main-transition) ease all;
+    -moz-transition: var(--main-transition) ease all;
+    -ms-transition: var(--main-transition) ease all;
+    -o-transition: var(--main-transition) ease all;
+}
+.card .body > .attribute:hover {
+    background-color: var(--desaturated-dark-cyan);
+    color: white;
+}
+@media(min-width: 768px) {
+    .card {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 15px;
+    }
+    .card .company-logo {
+        position: static;
+        height: 94px;
+        width: 94px;
+        transform: translate(0);
+        -webkit-transform: translate(0);
+        -moz-transform: translate(0);
+        -ms-transform: translate(0);
+        -o-transform: translate(0);
+    }
+    .card .head {
+        margin-right: auto;
+        margin-left: 30px;
+    }
+    .card .body {
+        margin-left: 15px;
+    }
+    .card hr {
+        display: none;
+    }
+}
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
